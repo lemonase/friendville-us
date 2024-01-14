@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="sl-theme-dark" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friendville dot US!!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css" />
+
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
 </head>
 
-<style>
-  .main-header {
-    margin: auto;
-  }
-</style>
+<body style="margin-left: 10%; margin-right: 10%;">
 
-<body>
+  <sl-tab-group>
+    <sl-tab slot="nav" panel="home"><sl-icon style="font-size: 26px;" name="house-door-fill"></sl-icon></sl-tab>
+    <sl-tab slot="nav" panel="map"><sl-icon style="font-size: 26px;" name="map"></sl-icon></sl-tab>
 
-  <h1 class="main-header">Welcome to Friendville!!</h1>
-  <p>Enjoy your stay</p>
-  <p>We are currently under construction</p>
-  <img src="./images/construction_tape.png" alt="caution tape">
-  <img src="./images/bad_hardhat.png" alt="a bad hardhat">
-  <img src="./images/hard_hat_guy01.png" alt="hardhat guy">
+    <sl-card class="card-image">
+      <sl-alert variant="warning" open>
+        <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+        <p>We are currently under construction</p>
+      </sl-alert>
+      <sl-alert open>
+        Stay tuned for updates!
+      </sl-alert>
+      <img slot="image" src="./images/bad_hardhat.png" alt="a bad hardhat">
+      <img slot="image" src="./images/construction_tape.png" alt="caution tape">
+      <img slot="image" src="./images/hard_hat_guy01.png" alt="hardhat guy">
+    </sl-card>
+
+    <sl-tab-panel name="home">
+      <sl-card class="card-header">
+        <div slot="header">
+          <h1 class="main-header">Welcome to Friendville!! (Home Page)</h1>
+        </div>
+        <div class="">
+          Enjoy your stay
+        </div>
+      </sl-card>
+    </sl-tab-panel>
+
+    <sl-tab-panel name="map">
+      <sl-card class="card-header">
+        <div slot="header">
+          <h1 class="main-header">Welcome to Friendville!! (Map)</h1>
+        </div>
+        <div class="">Just pretend a map is here or something idk...</div>
+      </sl-card>
+    </sl-tab-panel>
+  </sl-tab-group>
 
 </body>
 
