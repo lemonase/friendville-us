@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="sl-theme-dark" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendville</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
+</head>
+
+<style>
+    body {
+        height: 100%;
+        font: 16px var(--sl-font-sans);
+        font-weight: var(--sl-font-weight-normal);
+    }
+
+    .content {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 2.5rem;
+        font-size: 1.3rem;
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0;
+        right: 1%;
+        height: 2.5rem;
+    }
+
+    #fire-vid {
+        position: fixed;
+        top: 15%;
+        right: 5%;
+        z-index: -2;
+    }
+</style>
+
+<body>
+    <ul>
+        <h1>Welcome to Friendville! ☃️</h1>
+    </ul>
+
+    <sl-divider style="--color: tomato;"></sl-divider>
+
+    <div class="content">
+        <h1>FAQ</h1>
+
+        <h2>What is this?</h2>
+        <p>A cozy place on the internet for the friendville discord to put projects, things and events they care about.
+        </p>
+
+        <h2>Who can contribute?</h2>
+        <p>Anyone in friendville can contribute to this site, this is a community project 100%.</p>
+
+        <h2>How do I contribute?</h2>
+        <p>Head to the <a href="https://github.com/lemonase/friendville-us">GitHub</a> to see the code
+            and make a <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">Pull
+                Request</a> if ye wish.</p>
+    </div>
+
+    <video width="400px" id="fire-vid" autoplay loop controls src="images/fireo.mp4" type="video/mp4"></video>
+
+    <footer id="footer">
+        Have a rest by the fire! &lt3
+    </footer>
+</body>
+
+</html>
+
+<script>
+    let promisePlay = document.querySelector('#fire-vid').play();
+    if (promisePlay !== undefined) {
+        promisePlay.then(_ => {
+            console.log('autoplay - started');
+        }).catch(error => {
+            console.log('autoplay - notstarted');
+        });
+    }
+</script>
